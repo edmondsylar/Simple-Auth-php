@@ -11,6 +11,7 @@ The frontend folder is located at `/var/www/html/simple-auth-php/frontend/`.
 
 # Backed-end
     "Connect.php" -  this is the file that connects to the database.
+    "backend.php" - this is the file that holds the backend code.
 
 
 
