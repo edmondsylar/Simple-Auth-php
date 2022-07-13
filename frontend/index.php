@@ -10,6 +10,18 @@
     <title>php Auth</title>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>php Auth</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <a href="login.php">Login</a>
+                <a href="register.php">Register</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
