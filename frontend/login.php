@@ -3,7 +3,7 @@
     <div class="container">
         
         <!-- my content here -->
-        <h2>Login </h2>
+        <h2>Login</h2>
         <!-- bootstrap login form -->
         <!-- include navvar -->
         <?php include "./includes/navbar.php"; ?>
@@ -13,11 +13,11 @@
                 <form action="../backend/login.php" method="post">
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="required">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required="required">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
