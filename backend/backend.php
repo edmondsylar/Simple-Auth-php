@@ -1,4 +1,3 @@
-<form method="post
 <?php
     // include connect.php to connect to the database
     include 'connect.php';
