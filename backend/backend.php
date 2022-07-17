@@ -1,3 +1,4 @@
+<form method="post
 <?php
     // include connect.php to connect to the database
     include 'connect.php';
@@ -32,41 +33,50 @@
 
         public function login($email, $password){
             
-            if (preg_match("0-9A-za-z{!@#%$&^*()_-}[]'?/`~,.",$password) && preg_filter($email,FILTER_VALIDATE_EMAIL)){
-                // select all from the users table where the email is equal to the email parameter and             //The password is equal to the password parameter.
-                $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
-                $conn = $connection->prepare($sql);
-                $conn->execute();
-                $result = $conn->fetchAll();
-                // if the result is greater than 0.
-                echo $result;
-            }
+            if (isset($_POST['login'])){
+                    
+                if (preg_match("0-9A-za-z{!@#%$&^*()_-}[]'?/`~,.",$password) && preg_filter($email,FILTER_VALIDATE_EMAIL)){
+                    // select all from the users table where the email is equal to the email parameter and             //The password is equal to the password parameter.
+                    $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
+                    $conn = $connection->prepare($sql);
+                    $conn->execute();
+                    $result = $conn->fetchAll();
+                    // if the result is greater than 0.
+                    echo $result;
+                }
 
-            else{echo "Invalid input: check the details in the filed";
-            }
+                else{echo "Invalid input: check the details in the filed";
+                }
 
-            // get connection from connect.php.
+                // get connection from connect.php.
+            }
+            
             return 'login';
         }
 
+
         public function register($password,$email){
-            // checking the validity of the user input
-            if (preg_match("0-9A-za-z{!@#%$&^*()_-}[]'?/`~,.",$password) && preg_filter($email,FILTER_VALIDATE_EMAIL) && preg_match("a-zA-Z", $this->name)){
+            
+            if (isset($_POST['register'])){
 
-                //inserting  user details into  the user table
+                // checking the validity of the user input
+                if (preg_match("0-9A-za-z{!@#%$&^*()_-}[]'?/`~,.",$password) && preg_filter($email,FILTER_VALIDATE_EMAIL) && preg_match("a-zA-Z", $this->name)){
 
-                $sql = "INSERT INTO users(fullname,email,password) VALUES ('$this->name','$password','$email')";
-                $conn = $connection->prepare($sql);
-                $conn->execute();
-                $result = $conn->fetchAll();
+                    //inserting  user details into  the user table
 
-                //if the result is greater than 0.
-                echo $result;
+                    $sql = "INSERT INTO users(fullname,email,password) VALUES ('$this->name','$password','$email')";
+                    $conn = $connection->prepare($sql);
+                    $conn->execute();
+                    $result = $conn->fetchAll();
+
+                    //if the result is greater than 0.
+                    echo $result;
+                }
+
+                else{echo 'Invalid input: check the details in the filed';
+                }      
+
             }
-
-            else{echo 'Invalid input: check the details in the filed';
-            }      
-
             return 'register';
 
         }
