@@ -1,7 +1,7 @@
-<form method="post
+
+
 <?php
-    // include connect.php to connect to the database
-    include 'connect.php';
+
     // create a class called Backend.
     class Backend {
         //A functio n to validate user input
@@ -56,7 +56,7 @@
 
 
         public function register($password,$email){
-            
+
             if (isset($_POST['register'])){
 
                 // checking the validity of the user input
@@ -81,5 +81,6 @@
 
         }
     }
+    $object=new Backend() 
 
 ?>
