@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 2bb9a89da507268aa4d171af6e38b320c0c12eb5
 <?php
 
     // create a class called Backend.
